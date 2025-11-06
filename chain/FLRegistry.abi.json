@@ -1,0 +1,44 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true, "internalType": "uint256", "name": "roundId", "type": "uint256"},
+      {"indexed": true, "internalType": "uint256", "name": "clientId", "type": "uint256"},
+      {"indexed": false, "internalType": "bytes32", "name": "updateHash", "type": "bytes32"},
+      {"indexed": false, "internalType": "uint32", "name": "numSamples", "type": "uint32"},
+      {"indexed": false, "internalType": "int96", "name": "epsilonTimes1e6", "type": "int96"},
+      {"indexed": false, "internalType": "uint64", "name": "timestamp", "type": "uint64"}
+    ],
+    "name": "ClientCommit", "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {"indexed": true, "internalType": "uint256", "name": "roundId", "type": "uint256"},
+      {"indexed": false, "internalType": "bytes32", "name": "globalModelHash", "type": "bytes32"},
+      {"indexed": false, "internalType": "string", "name": "modelUri", "type": "string"},
+      {"indexed": false, "internalType": "uint32", "name": "numClients", "type": "uint32"},
+      {"indexed": false, "internalType": "uint64", "name": "timestamp", "type": "uint64"}
+    ],
+    "name": "RoundFinalized", "type": "event"
+  },
+  {
+    "inputs": [
+      {"internalType": "uint256", "name": "roundId", "type": "uint256"},
+      {"internalType": "uint256", "name": "clientId", "type": "uint256"},
+      {"internalType": "bytes32", "name": "updateHash", "type": "bytes32"},
+      {"internalType": "uint32", "name": "numSamples", "type": "uint32"},
+      {"internalType": "int96", "name": "epsilonTimes1e6", "type": "int96"}
+    ],
+    "name": "recordClientCommit", "outputs": [], "stateMutability": "nonpayable", "type": "function"
+  },
+  {
+    "inputs": [
+      {"internalType": "uint256", "name": "roundId", "type": "uint256"},
+      {"internalType": "bytes32", "name": "globalModelHash", "type": "bytes32"},
+      {"internalType": "string", "name": "modelUri", "type": "string"},
+      {"internalType": "uint32", "name": "numClients", "type": "uint32"}
+    ],
+    "name": "recordRoundFinal", "outputs": [], "stateMutability": "nonpayable", "type": "function"
+  }
+]

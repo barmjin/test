@@ -1,0 +1,38 @@
+project:
+  seed: 42
+  outputs_dir: "./outputs"
+
+data:
+  # لاحقًا سنوجّه هذه المسارات إلى ملفات MIMIC-III بعد تجهيزها (CSV/Parquet)
+  root: "./data"
+  train_file: "mimic_train.parquet"
+  test_file: "mimic_test.parquet"
+  features:
+    - age
+    - gender_M
+    - gender_F
+    - ethnicity_white
+    - ethnicity_black
+    - ethnicity_asian
+    - ethnicity_hispanic
+  target: "label"
+
+federated:
+  server_address: "127.0.0.1:8080"
+  num_clients: 5
+  rounds: 10
+  local_epochs: 2
+  batch_size: 64
+  lr: 0.001
+  noniid_alpha: 0.3
+
+privacy:
+  dp: true
+  noise_multiplier: 1.2
+  max_grad_norm: 1.0
+
+chain:
+  enabled: true
+  rpc_env: "WEB3_RPC"
+  privkey_env: "WEB3_PRIVATE_KEY"
+  contract_env: "FL_CONTRACT"

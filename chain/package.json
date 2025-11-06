@@ -1,0 +1,13 @@
+{
+  "name": "fl-registry-chain",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.1"
+  },
+  "scripts": {
+    "node": "hardhat node",
+    "deploy": "hardhat run --network localhost scripts/deploy.js"
+  }
+}

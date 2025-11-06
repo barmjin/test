@@ -1,0 +1,12 @@
+flwr
+torch
+torchvision
+numpy
+pandas
+scikit-learn
+opacus
+joblib
+loguru
+tenseal
+pybind11 
+cmake
